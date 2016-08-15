@@ -75,46 +75,4 @@ and Highlight annotations done for a specific source. Note that you
 might need to adjust the graph in the FROM part of the query and the
 URL in the oa:hasSource predicate. 
 
-------------------------------------------------------------
-NOTES ON BUILDING A CONNECTOR (for use with DomeoClient and Domeo)
-
-
-    (1) Would you please explain for me how the Connectors work and
-    what should I do to simulate using a Connector within the
-    DomeoClient?  Later on I would like to ask you how to making
-    Connectors work on the server for getting and storing data from
-    remote server but Prof Boyce suggests that we start with the
-    Client.
-
-
-Connectors are the way Domeo uses to communicate with external
-services.  Normally, besides the external web service, there are two
-components involved:
-
-a) the connector server side which connects to the external web
-service.  The goal of this connector is to send the request and shape
-the results in a way that the Domeo client can digest them. An example
-of connector is:
-https://github.com/domeo/domeo/tree/master/ConnectorNifService I've
-added some comments to the code of this one so it might be a good one
-to look at.  This particular connector services three different
-calls. I will detail this better later on.
-
-Also I've just started a new Connector here:
-https://github.com/domeo/domeo/tree/master/ConnectorEpmcService This
-is new and evolving, also could be a good example.  Also this could be
-a good example as it will do something similar to what you need to do.
-In fact EuroPMC has text mining results that have been precomputed and
-they want to make them available through Domeo. It seems very similar
-use case to yours.
-
-b) the connector client side that connect to the connector server
-side.  This is basically providing the logic (and user interfaces) for
-the user to query the external web service.  On the client the NIF
-connector code is under:
-https://github.com/domeo/DomeoClient/tree/master/src/org/mindinformatics/gwt/domeo/plugins/resource/nif
-Start looking at that structure.
-
--- 
-Dr. Paolo Ciccarese
-http://www.paolociccarese.info/
+3) Save qurey results as csv and follow instructions in PKDDISets/README for post-process data set  
