@@ -1,9 +1,9 @@
 
 post process csv from sparql query
 
-replace "nodeID://b[0-9]+" to ""
+replace "nodeID://XXXX" to ""
 replace "xsd:String" to ""
-replace "http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/" to "dikbD2R:"
+replace "http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/" to "dikbD2R":
 
 remove problematic sets:
 http://dbmi-icode-01.dbmi.pitt.edu:80/DDI-labels/38642D80-AAA6-4196-A033-3977FF35B48A.html
