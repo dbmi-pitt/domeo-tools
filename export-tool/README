@@ -39,13 +39,13 @@ PASSWORD=<PASSWORD>;
 Query Elasticsearch document store in order to export RDF graph
 ----------------------------------------------------------------
 
-See the convertJsonLDToRDF.py usage by running it with no commandline paramaters. Currently this outputs: 
+See the convertDDIJsonLDToRDF.py usage by running it with no commandline paramaters. Currently this outputs: 
 
-"convertJsonLDToRDF <query string> <collection> <output file name> <old version>(1: want old versions, 0: only get last version) <verbose>(optional 1=True, 0=False (default)"
+"convertDDIJsonLDToRDF <query string> <collection> <output file name> <old version>(1: want old versions, 0: only get last version) <verbose>(optional 1=True, 0=False (default)"
 
 Example - query for all annotations belonging to a Domeo user with ID "80808080466465c00146674fe5190024" and write them to RDF in a file called DDI-expert1.xml:
 
-$ python convertJsonLDToRDF.py 80808080466465c00146674fe5190024 devb30 domeo-ddi-annotations-in-rdf-07092014.xml 0
+$ python convertDDIJsonLDToRDF.py 80808080466465c00146674fe5190024 devb30 domeo-ddi-annotations-in-rdf-07092014.xml 0
 
 NOTE: results are limited to 10,000 at this time.
 
@@ -106,6 +106,6 @@ Clean csv dataset
 ------------------------------------------------------------
 post process csv from sparql query
 
-replace "nodeID://b[0-9]+" to ""
 replace "xsd:String" to ""
 replace "http://dbmi-icode-01.dbmi.pitt.edu:2020/vocab/resource/" to "dikbD2R:"
+replace "nodeID://b[0-9]+" to ""

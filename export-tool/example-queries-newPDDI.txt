@@ -13,7 +13,7 @@ PREFIX dailymed:<http://dbmi-icode-01.dbmi.pitt.edu/linkedSPLs/vocab/resource/>
 
 SELECT ?source ?date ?assertionType ?evidenceType ?prefix ?exactText ?suffix ?modality ?statementType ?comment ?drug1Lab ?drug1Type ?drug1Role ?dose1 ?drug2Lab ?drug2Type ?drug2Role ?dose2 ?objectRegimens ?objectFormulation ?objectDuration ?preciptRegimens ?preciptFormulation ?preciptDuration ?numOfParticipants ?auc ?aucType ?aucDirection ?cl ?clType ?clDirection ?cmax ?cmaxType ?cmaxDirection ?t12 ?t12Type ?t12Direction
 
-FROM <http://purl.org/net/nlprepository/pkddi-amy-latest-08152016>
+FROM <http://purl.org/net/nlprepository/pkddi-amy-latest-03232017>
 WHERE {
 
   ?annot a oa:ddiAnnotation;
