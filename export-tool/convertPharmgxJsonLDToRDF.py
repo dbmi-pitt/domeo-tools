@@ -18,8 +18,8 @@ store = IOMemory()
 cGraph = ConjunctiveGraph(store=store)
 
 # query examples:
-# python convertPharmgxJsonLDToRDF.py PgxConsensus devb30 domeo-consensus-pharmgx-annotations-in-rdf-07092014.xml
-# python convertPharmgxJsonLDToRDF.py PgxConsensus annotation domeo-consensus-pharmgx-annotations-in-rdf-07102014.xml
+# python convertPharmgxJsonLDToRDF.py PgxConsensus devb30 domeo-consensus-pharmgx-annotations-in-rdf-07092014.xml 0
+# python convertPharmgxJsonLDToRDF.py PgxConsensus annotation domeo-consensus-pharmgx-annotations-in-rdf-07102014.xml 0
 
 #QUERY_STR = "PgxConsensus"
 #QUERY_STR = "ao:SPLAnnotation"
@@ -38,7 +38,7 @@ if len(sys.argv) > 3:
     if len(sys.argv) == 5:
         OLD_VERSION = int(sys.argv[4])
 else:
-	print "Usage: convertJsonLDToRDF <query string> <collection> <output file name> <old versions>(optional 1=True, 0=False (default)) )"
+	print "Usage: convertPharmgxJsonLDToRDF <query string> <collection> <output file name> <old versions>(optional 1=True, 0=False (default)) )"
 	sys.exit(1)
 
 

@@ -39,13 +39,21 @@ PASSWORD=<PASSWORD>;
 Query Elasticsearch document store in order to export RDF graph
 ----------------------------------------------------------------
 
-See the convertDDIJsonLDToRDF.py usage by running it with no commandline paramaters. Currently this outputs: 
+1) Query DDI annotation from Domeo
 
-"convertDDIJsonLDToRDF <query string> <collection> <output file name> <old version>(1: want old versions, 0: only get last version) <verbose>(optional 1=True, 0=False (default)"
+$ python convertDDIJsonLDToRDF <query string> <collection> <output file name> <old version>(1: want old versions, 0: only get last version) <verbose>(optional 1=True, 0=False (default)
 
-Example - query for all annotations belonging to a Domeo user with ID "80808080466465c00146674fe5190024" and write them to RDF in a file called DDI-expert1.xml:
+Example: query for all annotations belonging to a Domeo user with ID "80808080466465c00146674fe5190024" and write them to RDF in a file called DDI-expert1.xml:
 
-$ python convertDDIJsonLDToRDF.py 80808080466465c00146674fe5190024 devb30 domeo-ddi-annotations-in-rdf-07092014.xml 0
+$ python convertDDIJsonLDToRDF.py 80808080466465c00146674fe5190024 annotation domeo-ddi-annotations-in-rdf.xml 0
+
+2) Query Pgx annotation from Domeo
+
+$ python convertPharmgxJsonLDToRDF.py <query string> <collection> <output file name> <old version>(1: want old versions, 0: only get last version) <verbose>(optional 1=True, 0=False (default)
+
+Example: query pgx annotation from user pgxconsensus 
+
+$ python convertPharmgxJsonLDToRDF.py PgxConsensus devb30 domeo-consensus-pharmgx-annotations-in-rdf.xml 0
 
 NOTE: results are limited to 10,000 at this time.
 
